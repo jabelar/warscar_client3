@@ -1,5 +1,4 @@
 // argument[0] is rx_buff
-// argument1 is object index (e.g. objBullet)
 var obj_id = buffer_read(argument[0], buffer_u32)
 var obj_x = buffer_read(argument[0], buffer_s32);
 var obj_y = buffer_read(argument[0], buffer_s32);
@@ -8,9 +7,21 @@ var obj_dir = buffer_read(argument[0], buffer_s32);
 var obj_image_index = buffer_read(argument[0], buffer_u8)
 var obj_image_speed = buffer_read(argument[0], buffer_u8)
 var obj_image_alpha = buffer_read(argument[0], buffer_u8)
-var new_instance = instance_create(obj_x, obj_y, argument[1]);
-new_instance.speed = obj_speed
-new_instance.direction = obj_dir
-new_instance.image_angle = obj_dir
-ds_map_add(object_map, obj_id, new_instance) // track server to client object mapping
-show_debug_message("Object created for server id = "+string(obj_id)+", client id = "+string(new_instance))
+var instance ;
+
+instance = ds_map_find_value(object_map, obj_id)
+if is_undefined(instance)
+{
+    show_debug_message("Could not find object id in map")
+}
+
+instance.x = obj_x
+instance.y = obj_y
+instance.speed = obj_speed
+instance.direction = obj_dir
+instance.image_angle = obj_dir
+instance.image_index = obj_image_index
+instance.image_speed = obj_image_speed
+instance.image_alpha = obj_image_alpha
+
+show_debug_message("Updated object")

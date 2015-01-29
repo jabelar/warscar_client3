@@ -1,6 +1,6 @@
 // https://www.yoyogames.com/tech_blog/11 for tutorial
 
-// show_debug_message("networking event occurred")
+show_debug_message("networking event occurred")
 
 var socket_id = ds_map_find_value( async_load, "id" );
 var network_event_type = ds_map_find_value(async_load, "type");
@@ -9,7 +9,7 @@ var ip_addr_rx = ds_map_find_value(async_load, "ip");
 var rx_buff = ds_map_find_value(async_load, "buffer");
 show_debug_message("Packet received from ip ="+string(ip_addr_rx)+", socket id ="+string(socket_id)+", port ="+string(port))
 
-if socket_id == global.socket_client // TCP packet incoming
+if socket_id == socket_client // TCP packet incoming
 {
     if is_undefined(rx_buff)
     {
@@ -21,22 +21,23 @@ if socket_id == global.socket_client // TCP packet incoming
         show_debug_message("Packet type = "+string(packet_type))
         switch packet_type
         {
-            case PLAYER_POS:
+            case OBJ_UPDATE:
             {
-
-                player_x[PLAYER1]= buffer_read(rx_buff, buffer_s32)
-                player_y[PLAYER1] = buffer_read(rx_buff, buffer_s32)
-                player_x[PLAYER2]= buffer_read(rx_buff, buffer_s32)
-                player_y[PLAYER2] = buffer_read(rx_buff, buffer_s32)
-                // show_debug_message("Received data packet from server, player_x[PLAYER1] = "+string(player_x[PLAYER1]))
-                // show_debug_message("Received data packet from server, player_x[PLAYER2] = "+string(player_x[PLAYER2]))  
+                show_debug_message("Received object update packet")
+                scrObjectUpdate(rx_buffer)
                 break;
             }
             case OBJ_CREATE:
             {
+                show_debug_message("Received object create packet")
                 var obj_type = buffer_read(rx_buff, buffer_u8);
                 switch obj_type
                 {
+                    case PLAYER:
+                    {
+                        scrCreateObject(rx_buff, objPlayer)
+                        break;
+                    }
                     case OBSTACLE:
                     {
                         scrCreateObject(rx_buff, objObstacle)

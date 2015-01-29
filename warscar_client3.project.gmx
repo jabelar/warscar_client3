@@ -18,19 +18,27 @@
   <scripts name="scripts">
     <script>scripts\scrConstants.gml</script>
     <script>scripts\scrControllerCreateEvent.gml</script>
+    <script>scripts\scrClearInput.gml</script>
+    <script>scripts\scrProcessInput.gml</script>
     <script>scripts\scrControllerStepEvent.gml</script>
     <script>scripts\scrControllerDialogEvent.gml</script>
-    <script>scripts\scrCreateObject.gml</script>
-    <script>scripts\scrCreateEffect.gml</script>
-    <script>scripts\scrPlaySound.gml</script>
-    <script>scripts\scrDestroyObject.gml</script>
-    <script>scripts\scrProcessReceivedUDP.gml</script>
-    <script>scripts\scrNetworkingEvent.gml</script>
+    <scripts name="Networking">
+      <script>scripts\scrNetworkingEvent.gml</script>
+      <script>scripts\scrSendInputToServer.gml</script>
+      <script>scripts\scrIntializeNetworking.gml</script>
+      <scripts name="Packet Processing">
+        <script>scripts\scrCreateObject.gml</script>
+        <script>scripts\scrObjectUpdate.gml</script>
+        <script>scripts\scrDestroyObject.gml</script>
+        <script>scripts\scrCreateEffect.gml</script>
+        <script>scripts\scrPlaySound.gml</script>
+        <script>scripts\scrProcessReceivedUDP.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\object0</object>
-    <object>objects\objPlayer1</object>
-    <object>objects\objPlayer2</object>
+    <object>objects\objController</object>
+    <object>objects\objPlayer</object>
     <object>objects\objBullet</object>
     <object>objects\objObstacle</object>
   </objects>
