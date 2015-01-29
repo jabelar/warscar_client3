@@ -19,6 +19,7 @@ if socket_id == socket_client // TCP packet incoming
     {
         var packet_type = buffer_read(rx_buff, buffer_u8);
         show_debug_message("Packet type = "+string(packet_type))
+        status_string = "Received TCP packet"
         switch packet_type
         {
             case OBJ_UPDATE:
@@ -79,5 +80,5 @@ if socket_id == socket_client // TCP packet incoming
 }
 else // UDP packet
 {
-    scrProcessReceivedUDP(rx_buff, ip_addr_rx)    
+    scrProcessReceivedUDP(rx_buff, ip_addr_rx, socket_id)    
 }

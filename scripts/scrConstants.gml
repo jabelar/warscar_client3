@@ -10,12 +10,17 @@ EFFECT_CREATE = 4
 globalvar INPUT;
 INPUT = 0
 
+// broadcast types from server
+globalvar SERVER_ANNOUNCE, CLIENT_ANNOUNCE;
+SERVER_ANNOUNCE = 0
+CLIENT_ANNOUNCE = 1
+
 // object types
 globalvar OBSTACLE, FLAG, BULLET, PLAYER;
 OBSTACLE = 0
 FLAG = 1
 BULLET = 2
-PLAYER - 3
+PLAYER = 3
 
 // sound types
 globalvar MAIN_GUN;

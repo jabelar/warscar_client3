@@ -35,7 +35,12 @@
         <script>scripts\scrProcessReceivedUDP.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scrControllerDrawEvent.gml</script>
+    <script>scripts\scrAlarm0.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\objController</object>
     <object>objects\objPlayer</object>
