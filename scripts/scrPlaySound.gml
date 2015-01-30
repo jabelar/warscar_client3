@@ -1,5 +1,5 @@
 // argument0 is rx_buff
-var sound_type = buffer_read(argument0, buffer_u32)
+var sound_type = buffer_read(argument0, buffer_u8)
 var sound_x = buffer_read(argument0, buffer_u32);
 var sound_y = buffer_read(argument0, buffer_u32);
 switch sound_type
