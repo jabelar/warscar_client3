@@ -14,14 +14,16 @@ if is_undefined(instance)
 {
     show_debug_message("Could not find object id in map")
 }
-
-instance.x = obj_x
-instance.y = obj_y
-instance.speed = obj_speed
-instance.direction = obj_dir
-instance.image_angle = obj_dir
-instance.image_index = obj_image_index
-instance.image_speed = obj_image_speed
-instance.image_alpha = obj_image_alpha
-
-show_debug_message("Updated object")
+else
+{
+    instance.x = obj_x
+    instance.y = obj_y
+    instance.speed = obj_speed
+    instance.direction = obj_dir
+    instance.image_angle = obj_dir
+    instance.image_index = obj_image_index
+    instance.image_speed = obj_image_speed
+    instance.image_alpha = obj_image_alpha
+    
+    // show_debug_message("Updated object "+string(instance)+" to x = "+string(obj_x))
+}

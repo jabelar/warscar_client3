@@ -13,4 +13,4 @@ new_instance.speed = obj_speed
 new_instance.direction = obj_dir
 new_instance.image_angle = obj_dir
 ds_map_add(object_map, obj_id, new_instance) // track server to client object mapping
-show_debug_message("Object created for server id = "+string(obj_id)+", client id = "+string(new_instance))
+show_debug_message("Object created for server id = "+string(obj_id)+", client id = "+string(new_instance)+" at x = "+string(obj_x)+" y = "+string(obj_y))

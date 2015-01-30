@@ -19,13 +19,13 @@ if socket_id == socket_client // TCP packet incoming
     else
     {
         var packet_type = buffer_read(rx_buff, buffer_u8);
-        show_debug_message("Packet type = "+string(packet_type))
+        // show_debug_message("Packet type = "+string(packet_type))
         status_string = "Received TCP packet"
         switch packet_type
         {
             case OBJ_UPDATE:
             {
-                show_debug_message("Received object update packet")
+                // show_debug_message("Received object update packet")
                 scrObjectUpdate(rx_buff)
                 break;
             }

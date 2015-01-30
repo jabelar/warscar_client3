@@ -26,7 +26,7 @@ switch packet_type
             //ip_query_id = show_question_async("Want to connect to server ="+server_name+"?")
         }
         
-        show_debug_message("Server broadcast received from "+argument[1]+", name is "+server_name);
+        // show_debug_message("Server broadcast received from "+argument[1]+", name is "+server_name);
         status_string = "Server broadcast received from "+argument[1]+", name is "+server_name
         break;
     }
@@ -35,7 +35,7 @@ switch packet_type
         var client_name = buffer_read(argument[0], buffer_string)
         my_ip_address = argument[1]
         
-        show_debug_message("My IP address = "+string(my_ip_address))
+        // show_debug_message("My IP address = "+string(my_ip_address))
         break;
     }
     default:
