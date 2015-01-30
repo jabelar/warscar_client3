@@ -4,4 +4,3 @@ key_right = false
 key_left = false
 key_weapon = false
 
-

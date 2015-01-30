@@ -4,4 +4,3 @@ if connected
 {
     scrSendInputToServer()
 }
-
