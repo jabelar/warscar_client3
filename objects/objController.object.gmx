@@ -277,8 +277,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>network_destroy(global.socket_client)
-network_destroy(global.socket_listener)
+            <string>network_destroy(socket_client)
+network_destroy(socket_listener)
+network_destroy(socket_broadcast)
 game_restart()
 </string>
           </argument>

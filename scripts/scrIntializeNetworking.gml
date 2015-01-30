@@ -43,4 +43,3 @@ show_debug_message("Creating broadcast buffer")
 tx_buff_broadcast = buffer_create( 256, buffer_grow, 1)
 
 
-
