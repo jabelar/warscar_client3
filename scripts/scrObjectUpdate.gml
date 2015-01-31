@@ -9,13 +9,13 @@ var obj_image_speed = buffer_read(argument[0], buffer_u8)
 var obj_image_alpha = buffer_read(argument[0], buffer_u8)
 var instance ;
 
-instance = ds_map_find_value(object_map, obj_id)
-if is_undefined(instance)
+if not ds_map_exists(object_map, obj_id)
 {
-    show_debug_message("Could not find object id in map")
+    show_debug_message("Could not find object id = "+string(obj_id)+" in map")
 }
 else
 {
+    instance = ds_map_find_value(object_map, obj_id)
     instance.x = obj_x
     instance.y = obj_y
     instance.speed = obj_speed
