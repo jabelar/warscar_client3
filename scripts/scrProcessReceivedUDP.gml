@@ -33,9 +33,15 @@ switch packet_type
     case CLIENT_ANNOUNCE:
     {
         var client_name = buffer_read(argument[0], buffer_string)
-        my_ip_address = argument[1]
-        
-        // show_debug_message("My IP address = "+string(my_ip_address))
+        if my_ip_address == "127.0.0.1" // default value
+        {
+            my_ip_address = argument[1]
+            // show_debug_message("My IP address = "+string(my_ip_address))
+        }
+        else
+        {
+            // show_debug_message("See client announce packet from IP address = "+string(argument[1]))
+        }
         break;
     }
     default:
