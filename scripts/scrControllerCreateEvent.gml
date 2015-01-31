@@ -4,7 +4,7 @@ show_debug_message("Running client side")
 status_string = "Waiting for network activity"
 my_ip_address = "127.0.0.1"
 
-alarm[0] = room_speed * 10
+alarm[0] = room_speed * 30
 
 scrConstants()
 
