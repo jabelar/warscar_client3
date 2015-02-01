@@ -9,6 +9,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\sprite4</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprObstacle</sprite>
     <sprite>sprites\sprBullet</sprite>
@@ -29,17 +30,21 @@
       <scripts name="Packet Processing">
         <script>scripts\scrCreateObject.gml</script>
         <script>scripts\scrObjectUpdate.gml</script>
+        <script>scripts\scrHUDUpdate.gml</script>
         <script>scripts\scrDestroyObject.gml</script>
         <script>scripts\scrCreateEffect.gml</script>
         <script>scripts\scrPlaySound.gml</script>
         <script>scripts\scrProcessReceivedUDP.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scrDrawDebug.gml</script>
+    <script>scripts\scrDrawHUD.gml</script>
     <script>scripts\scrControllerDrawEvent.gml</script>
     <script>scripts\scrAlarm0.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
+    <font>fonts\font1</font>
   </fonts>
   <objects name="objects">
     <object>objects\objController</object>

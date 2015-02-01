@@ -72,6 +72,11 @@ if socket_id == socket_client // TCP packet incoming
                 scrPlaySound(rx_buff)
                 break;
             }
+            case NF_HUD:
+            {
+                scrHUDUpdate(rx_buff)
+                break;
+            }
             default: // unrecognized packet type
             {
                 show_debug_message("Unrecognized packet type")
