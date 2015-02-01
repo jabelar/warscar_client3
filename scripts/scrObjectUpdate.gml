@@ -1,12 +1,16 @@
-// argument[0] is rx_buff
-var obj_id = buffer_read(argument[0], buffer_u32)
-var obj_x = buffer_read(argument[0], buffer_s32);
-var obj_y = buffer_read(argument[0], buffer_s32);
-var obj_speed = buffer_read(argument[0], buffer_s32);
-var obj_dir = buffer_read(argument[0], buffer_s32);
-var obj_image_index = buffer_read(argument[0], buffer_u8)
-var obj_image_speed = buffer_read(argument[0], buffer_u8)
-var obj_image_alpha = buffer_read(argument[0], buffer_u8)
+/// scrObjectUpdate(rx_buff)
+var rx_buff = argument[0];
+
+var obj_id = buffer_read(rx_buff, buffer_u32);
+var obj_x = buffer_read(rx_buff, buffer_s32);
+var obj_y = buffer_read(rx_buff, buffer_s32);
+var obj_speed = buffer_read(rx_buff, buffer_s32);
+var obj_dir = buffer_read(rx_buff, buffer_s32);
+var obj_image_index = buffer_read(rx_buff, buffer_u8);
+var obj_image_speed = buffer_read(rx_buff, buffer_u8);
+var obj_image_alpha = buffer_read(rx_buff, buffer_u8);
+var obj_image_blend = buffer_read(rx_buff, buffer_u32);
+
 var instance ;
 
 if not ds_map_exists(object_map, obj_id)
@@ -24,6 +28,7 @@ else
     instance.image_index = obj_image_index
     instance.image_speed = obj_image_speed
     instance.image_alpha = obj_image_alpha
+    instance.image_blend = obj_image_blend
     
     // show_debug_message("Updated object "+string(instance)+" to x = "+string(obj_x))
 }
