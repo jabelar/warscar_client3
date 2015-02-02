@@ -5,7 +5,7 @@
 var packet_type = buffer_read(argument[0], buffer_u8)
 switch packet_type
 {
-    case SERVER_ANNOUNCE:
+    case NF_SERVER_ANNOUNCE:
     {
         var server_name = buffer_read(argument[0], buffer_string)
         if not connected
@@ -30,7 +30,7 @@ switch packet_type
         status_string = "Server broadcast received from "+argument[1]+", name is "+server_name
         break;
     }
-    case CLIENT_ANNOUNCE:
+    case NF_CLIENT_ANNOUNCE:
     {
         var client_name = buffer_read(argument[0], buffer_string)
         if my_ip_address == "127.0.0.1" // default value

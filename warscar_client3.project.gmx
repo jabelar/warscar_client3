@@ -17,17 +17,27 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scrConstants.gml</script>
-    <script>scripts\scrControllerCreateEvent.gml</script>
-    <script>scripts\scrClearInput.gml</script>
-    <script>scripts\scrProcessInput.gml</script>
-    <script>scripts\scrControllerStepEvent.gml</script>
-    <script>scripts\scrControllerDialogEvent.gml</script>
+    <scripts name="Events">
+      <script>scripts\scrControllerCreateEvent.gml</script>
+      <script>scripts\scrControllerDrawEvent.gml</script>
+      <script>scripts\scrControllerStepEvent.gml</script>
+    </scripts>
+    <scripts name="Utilities">
+      <script>scripts\scrConstants.gml</script>
+      <scripts name="Input">
+        <script>scripts\scrClearInput.gml</script>
+        <script>scripts\scrProcessInput.gml</script>
+      </scripts>
+      <scripts name="Initialization">
+        <script>scripts\scrNetworkingConstants.gml</script>
+        <script>scripts\scrGameConstants.gml</script>
+        <script>scripts\scrInitializeHUD.gml</script>
+        <script>scripts\scrIntializeNetworking.gml</script>
+      </scripts>
+    </scripts>
     <scripts name="Networking">
       <script>scripts\scrNetworkingEvent.gml</script>
-      <script>scripts\scrSendInputToServer.gml</script>
-      <script>scripts\scrIntializeNetworking.gml</script>
-      <scripts name="Packet Processing">
+      <scripts name="Received Packets">
         <script>scripts\scrCreateObject.gml</script>
         <script>scripts\scrObjectUpdate.gml</script>
         <script>scripts\scrHUDUpdate.gml</script>
@@ -36,11 +46,15 @@
         <script>scripts\scrPlaySound.gml</script>
         <script>scripts\scrProcessReceivedUDP.gml</script>
       </scripts>
+      <scripts name="Transmit Packets">
+        <script>scripts\scrSendInputToServer.gml</script>
+        <script>scripts\scrSendClientBroadcast.gml</script>
+      </scripts>
     </scripts>
-    <script>scripts\scrDrawDebug.gml</script>
-    <script>scripts\scrDrawHUD.gml</script>
-    <script>scripts\scrControllerDrawEvent.gml</script>
-    <script>scripts\scrAlarm0.gml</script>
+    <scripts name="Drawing">
+      <script>scripts\scrDrawHUD.gml</script>
+      <script>scripts\scrDrawDebug.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>

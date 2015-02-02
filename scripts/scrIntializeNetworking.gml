@@ -1,3 +1,8 @@
+/// scrInitializeNetworking()
+
+my_ip_address = "127.0.0.1"
+
+
 // create client TCP socket
 socket_client = network_create_socket(network_socket_tcp)
 if socket_client < 0
@@ -42,4 +47,5 @@ else
 show_debug_message("Creating broadcast buffer")
 tx_buff_broadcast = buffer_create( 256, buffer_grow, 1)
 
-
+// start the broadcasting alarm
+broadcast_alarm = room_speed * 3

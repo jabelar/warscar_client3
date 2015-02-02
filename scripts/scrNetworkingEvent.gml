@@ -23,13 +23,13 @@ if socket_id == socket_client // TCP packet incoming
         status_string = "Received TCP packet"
         switch packet_type
         {
-            case OBJ_UPDATE:
+            case NF_OBJ_UPDATE:
             {
                 // show_debug_message("Received object update packet")
                 scrObjectUpdate(rx_buff)
                 break;
             }
-            case OBJ_CREATE:
+            case NF_OBJ_CREATE:
             {
                 show_debug_message("Received object create packet")
                 var obj_type = buffer_read(rx_buff, buffer_u8);
@@ -57,17 +57,17 @@ if socket_id == socket_client // TCP packet incoming
                 }
                 break;
             }
-            case OBJ_DESTROY:
+            case NF_OBJ_DESTROY:
             {
                 scrDestroyObject(rx_buff)
                 break;
             }
-            case EFFECT_CREATE:
+            case NF_EFFECT_CREATE:
             {
                 scrCreateEffect(rx_buff)
                 break;
             }
-            case SOUND_PLAY:
+            case NF_SOUND_PLAY:
             {
                 scrPlaySound(rx_buff)
                 break;
